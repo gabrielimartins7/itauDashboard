@@ -8,7 +8,10 @@
     <div class="row">
       <div class="col-md-2">
         <label>Cep</label>
-        <input class="form-control" value="{{ data.cep }}" />
+        <input
+          class="form-control"
+          value="{{ data.cep | mask: '00000-000' }}"
+        />
       </div>
 
       <div class="col-md-4">
@@ -46,11 +49,17 @@
 
       <div class="col-md-2">
         <label>Valuation</label>
-        <input class="form-control" value="{{ data.valuation }}" />
+        <input
+          class="form-control"
+          value="{{ data.valuation | currency: 'BRL':'R$' }}"
+        />
       </div>
       <div class="col-md-2">
         <label>Cnpj</label>
-        <input class="form-control" value="{{ data.cnpj }}" />
+        <input
+          class="form-control"
+          value="{{ data.cnpj | mask: '00.000.000/0000.00' }}"
+        />
       </div>
       <div class="col-md-2">
         <label>Ativo</label>
@@ -58,6 +67,8 @@
       </div>
     </div>
   </div>
-  <button _ngcontent-c22="" class="back" mat-button>voltar</button>
+  <button _ngcontent-c22="" class="back" mat-button (click)="back()">
+    voltar
+  </button>
   <button _ngcontent-c22="" class="save" mat-button>Salvar</button>
 </div>

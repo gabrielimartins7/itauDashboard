@@ -11,7 +11,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 @NgModule({
   declarations: [DefaultComponent, PolosComponent, PoloComponent],
   imports: [
@@ -24,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatTableModule,
     MatIconModule,
     MatSelectModule,
+    NgxMaskModule.forRoot(maskConfig),
   ],
 })
 export class DefaultModule {}
